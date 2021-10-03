@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 class="text-white text-center font-weight-bold bg-success" style="font-size: 55px;"> Registration Page </h1>
+
+	<div class="container"><br>
+		
+		<div class="col-lg-6 m-auto d-block">
+			
+			<form action="#" onsubmit="return validation()" class="bg-light">
+				
+				<div class="form-group">
+					<label for="user" class="font-weight-bold"> Username: </label>
+					<input type="text" name="user" class="form-control" id="user" autocomplete="o">
+					<span id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Password: </label>
+					<input type="text" name="pass" class="form-control" id="pass" autocomplete="off">
+					<span id="passwords" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Confirm Password: </label>
+					<input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off">
+					<span id="confrmpass" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				
+
+				<div class="form-group">
+					<label for="dateofbirth" class="font-weight-bold"> Date Of Birth: </label>
+					<tr>
+					<td>
+                    
+                    <select>
+					<option>Day</option>
+					<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+					<option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+					<option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+					<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+					<option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+					<option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+					</select>
+
+					<select>
+						<option>Month</option>
+						<option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option>
+						<option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option>
+						<option>Nov</option><option>Dec</option>
+						</select>
+
+					<select>
+					    <option>Year</option>
+						<option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option>
+						<option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option>
+						
+					</select>
+					</td>
+					 </tr>
+					</div>
+						
+	
+					
+
+					<div class="form-group">
+					<label class="font-weight-bold"> City: </label>
+					<span id="country" class="text-danger font-weight-bold"> </span>
+	
+					<select>
+					<option>Select</option>
+					<option>Mumbai</option>
+					<option>Pune</option>
+					<option>Nashik</option>
+					<option>Banglore</option>
+					</select> 
+						
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Programming languages known: </label>
+					<label class="container">C
+						<input type="checkbox" checked="checked">
+						<span class="checkmark"></span>
+					  </label>
+					  <label class="container">C++
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					  </label>
+					  <label class="container">Java
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					  </label>
+					  <label class="container">Javascipt
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					  </label>
+					  <label class="container">Python
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					  </label>
+
+					  
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<input type="submit" name="submit" value="submit" class="btn btn-success" 	autocomplete="off">
+
+
+			</form><br><br>
+
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		
+
+		function validation(){
+
+			var user = document.getElementById('user').value;
+			var pass = document.getElementById('pass').value;
+			var confirmpass = document.getElementById('conpass').value;
+			var emails = document.getElementById('emails').value;
+	
+			
+			if(user == ""){
+				document.getElementById('username').innerHTML =" ** Please fill the username field";
+				return false;
+			}
+			if((user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Maximum 20 characters allowded";
+				return false;	
+			}
+			if(!isNaN(user)){
+				document.getElementById('username').innerHTML =" ** only characters are allowed";
+				return false;
+			}
+
+
+
+			if(pass == ""){
+				document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+				return false;
+			}
+			if((pass.length <= 7)) {
+				document.getElementById('passwords').innerHTML =" ** Maximum 8 letters required";
+				return false;	
+			}
+
+			if(pass.search(/[a-z]/)==-1) {
+				document.getElementById('passwords').innerHTML =" ** Passwords must contain 1 lowercase alphabet ";
+				return false;	
+			}
+
+			if(pass.search(/[A-Z]/)==-1) {
+				document.getElementById('passwords').innerHTML =" ** Passwords must contain 1 uppercase alphabet ";
+				return false;	
+			}
+
+			if(pass.search(/[#,%,@]/)==-1) {
+				document.getElementById('passwords').innerHTML =" ** Passwords must contain 1 special character ";
+				return false;	
+			}
+
+
+
+			if(pass!=confirmpass){
+				document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+				return false;
+			}
+
+        
+
+			if(emails == ""){
+				document.getElementById('emailids').innerHTML =" ** Please fill the email idx` field";
+				return false;
+			}
+			if(emails.indexOf('@') <= 0 ){
+				document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+				return false;
+			}
+
+			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				return false;
+			}
+		}
+	
+	</script>
+
+</body>
+</html>
